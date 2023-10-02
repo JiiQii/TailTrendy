@@ -85,12 +85,14 @@
       {%- endif %}
     </option>
   {%- endif -%}
-  <p>option {{option}}</p>
-  <p>option.values {{option.values}}</p>
+   <p>option {{option}}</p>
+   <p>option.values {{option.values}}</p>
    <p>section.id {{ section.id }}</p>
    <p>option.position {{ option.position }}</p>
+   <p>forloop.index0 {{ forloop.index0 }}</p>
    <p>forloop.index0 {{ forloop.index0 }}</p>
    <p>option.name {{ option.name }}</p>
    <p>value | escape {{ value | escape }}</p>
    <p>product_form_id {{ product_form_id }}</p>
+   <p>url {{ product.variants[forloop.index0].metafields.custom.color_stylepick}}</p>
 {%- endfor -%}
