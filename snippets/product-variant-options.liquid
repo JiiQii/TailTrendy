@@ -24,12 +24,12 @@
 -%}
 
 {% comment %} button style {% endcomment %}
-<style>
+{% comment %} <style>
 .bg_label {
   background-image: url('{{product.variants[forloop.index0].metafields.custom.color_stylepick}}');
   background-color: rgba(0, 0, 0, 0);
 }
-</style>
+</style> {% endcomment %}
 
 {%- for value in option.values -%}
   {%- liquid
@@ -70,7 +70,10 @@
     {% comment %} Change color background to metafields image {% endcomment %}
     {% comment %} background-image: url('product.variants[forloop.index0].metafields.custom.color_stylepick'); {% endcomment %}
     {% if option.name == "Color" %}
-      <label class="bg_label"
+      <label style="
+        background-image: url('{{product.variants[forloop.index0].metafields.custom.color_stylepick}}');
+        background-color: rgba(0, 0, 0, 0);
+      "
       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
       </label>
