@@ -94,6 +94,6 @@
    <p>option.name {{ option.name }}</p>
    <p>value | escape {{ value | escape }}</p>
    <p>product_form_id {{ product_form_id }}</p>
-   <p>url {{ product.variants}}</p>
-   {% comment %} [forloop.index0].metafields.custom.color_stylepick {% endcomment %}
+   <p>url {{ product.variants[forloop.index0]}}</p>
+   {% comment %} .metafields.custom.color_stylepick {% endcomment %}
 {%- endfor -%}
