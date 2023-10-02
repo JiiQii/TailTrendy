@@ -62,8 +62,8 @@
     {% comment %} Change color background to metafields image {% endcomment %}
     {% comment %} background-image: url('product.variants[forloop.index0].metafields.custom.color_stylepick'); {% endcomment %}
     {% if option.name == "Color" %}
-      <label style=" background-image: url('{{product.variants[forloop.index0].metafields.custom.color_stylepick}}');" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ value -}}
+      <label class="bg_lable" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      {% comment %} {{ value -}} {% endcomment %}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
       </label>
     {% else %}
@@ -87,7 +87,7 @@
       {%- endif %}
     </option>
   {%- endif -%}
-   <p>option {{option}}</p>
+   {% comment %} <p>option {{option}}</p>
    <p>option.values {{option.values}}</p>
    <p>section.id {{ section.id }}</p>
    <p>option.position {{ option.position }}</p>
@@ -97,6 +97,14 @@
    <p>value | escape {{ value | escape }}</p>
    <p>product_form_id {{ product_form_id }}</p>
    <p>url {{ product.variants[forloop.index0]}}</p>
-   <p>url {{ product.variants[forloop.index0].metafields.custom.color_stylepick }}</p>
+   <p>url {{ product.variants[forloop.index0].metafields.custom.color_stylepick }}</p> {% endcomment %}
    {% comment %} .metafields.custom.color_stylepick {% endcomment %}
 {%- endfor -%}
+
+
+<style>
+.bg_lable {
+  background-image: url('{{product.variants[forloop.index0].metafields.custom.color_stylepick}}');
+  background-color: rgba(0, 0, 0, 0);
+}
+</style>
