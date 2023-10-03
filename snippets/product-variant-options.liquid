@@ -134,7 +134,7 @@
       {%- endif %}
     </option>
   {%- endif -%}
-  {% comment %}
+
     <p>option {{option}}</p>
     <p>option.values {{option.values}}</p>
     <p>section.id {{ section.id }}</p>
@@ -146,6 +146,6 @@
     <p>product_form_id {{ product_form_id }}</p>
     <p>url {{ product.variants[forloop.index0]}}</p>
     <p>url {{ product.variants[forloop.index0].metafields.custom.color_stylepick }}</p>
-  {% endcomment %}
+
   {% comment %} .metafields.custom.color_stylepick {% endcomment %}
 {%- endfor -%}
