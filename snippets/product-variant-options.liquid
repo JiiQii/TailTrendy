@@ -72,6 +72,21 @@
     {% comment %} aspect-ratio: 1 / 1; {% endcomment %}
     {% comment %} width:auto;     background-repeat: no-repeat;{% endcomment %}
     {% if option.name == "Color" %}
+      {% if option.selected_value == value %} 
+        <label style="
+        background-image: url('{{product.variants[forloop.index0].metafields.custom.color_stylepick}}');
+        background-color: rgba(0, 0, 0, 0);
+        background-position: center center;
+        height:30px;
+        width:30px;
+        border-radius: 50%;
+        padding: 15px;
+        
+      "
+      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      </label>
+      {% endif %}
       <label style="
         background-image: url('{{product.variants[forloop.index0].metafields.custom.color_stylepick}}');
         background-color: rgba(0, 0, 0, 0);
