@@ -93,7 +93,11 @@
         </label>
         <script>
           function logMessage() {
-            console.log("按钮被单击了！");
+             if (label.style.borderColor === 'black') {
+        label.style.borderColor = 'white';
+      } else {
+        label.style.borderColor = 'black';
+      }
           }
         </script>
       {% else %}
